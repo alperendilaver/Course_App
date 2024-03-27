@@ -1,0 +1,9 @@
+@model Kurs
+
+<p>@Model.Baslik isimli kurs silinsin mi</p>
+
+<form  method="post" asp-action="Delete">
+    <input type="hidden" asp-for="KursId">
+    <button type="submit" class="btn btn-danger">Evet</button>
+    <a asp-action="Index" class="btn btn-primary">Hayır</a>
+</form>

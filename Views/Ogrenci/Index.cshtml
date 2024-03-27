@@ -1,0 +1,30 @@
+@model IEnumerable<Ogrenci>
+<h2>Ogrenci Listesi</h2>
+<hr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="width: 150px;">@Html.DisplayNameFor(m=> m.OgrenciId)</th>
+            
+            <th>@Html.DisplayNameFor(m=> m.OgrenciAd)</th>
+            
+            <th>@Html.DisplayNameFor(m=> m.OgrenciSoyad)</th>
+            <th style="width: 150px;"></th><!--Buton Kolonu-->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var ogrenci in Model){
+            <tr>
+                <td>@Html.DisplayFor(modelItem => ogrenci.OgrenciId)</td><!--DisplayFor içerideki değeri alır-->
+                <td>@Html.DisplayFor(modelItem => ogrenci.OgrenciAd)</td>
+                <td>@Html.DisplayFor(modelItem => ogrenci.OgrenciSoyad)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@ogrenci.OgrenciId" class="btn btn-sm btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@ogrenci.OgrenciId" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<a asp-action="Create" class="btn btn-primary">Ogrenci Ekle</a>

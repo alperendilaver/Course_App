@@ -1,0 +1,24 @@
+@model KursKayit
+<h2>Kurs Kayit</h2>
+<hr>
+<form asp-controller="KursKayit" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label class="form-label" asp-for="OgrenciId">Ogrenci Adı</label>
+        <select asp-for="OgrenciId" class="form-control" asp-items="ViewBag.Ogrenciler"><option value="">Seçiniz</option>
+        </select>
+        </div>
+
+    <div class="mb-3">
+        <label class="form-label" asp-for="KursId">Kurs</label>
+        <select asp-for="KursId" asp-items="ViewBag.Kurslar" class="form-control"><option value="">Seçiniz</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="OgretmenId" class="form-label">Ogretmen Seciniz</label>
+        <select asp-for="OgretmenId" asp-items="ViewBag.Ogretmenler" class="form-control">
+            <option value="">Seçiniz</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Kaydet</button>
+</form>

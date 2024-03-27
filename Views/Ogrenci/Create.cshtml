@@ -1,0 +1,30 @@
+@model Ogrenci
+<h2>Ogrenci Oluştur</h2>
+<hr>
+<form asp-controller="Ogrenci" asp-action="Create" method="post">
+    <div class="mb-3">
+        <label class="form-label" asp-for="OgrenciAd">Ogrenci Adı</label>
+        <input asp-for="OgrenciAd" class="form-control">
+
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" asp-for="OgrenciSoyad">Ogrenci Soyadı</label>
+        <input asp-for="OgrenciSoyad" class="form-control">
+
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" asp-for="Eposta">E posta</label>
+        <input asp-for="Eposta" class="form-control">
+
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" asp-for="Telefon">Telefon</label>
+        <input asp-for="Telefon" class="form-control">
+
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Kaydet</button>
+</form>

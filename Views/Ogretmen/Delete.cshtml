@@ -1,0 +1,9 @@
+@model Ogretmen
+
+<p>@Model.OgretmenAd @Model.OgretmenSoyad isimli ogretmen silinsin mi</p>
+
+<form  method="post" asp-action="Delete">
+    <input type="hidden" name="id" value="@Model.OgretmenId">
+    <button type="submit" class="btn btn-danger">Evet</button>
+    <a asp-action="Index" class="btn btn-primary">Hayır</a>
+</form>
